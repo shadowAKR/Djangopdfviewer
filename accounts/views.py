@@ -10,12 +10,12 @@ from django.http import request, FileResponse, HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 
 # Create your views here.
-from django.template.defaulttags import csrf_token
+
 from django.views.generic import ListView, DetailView
 from django.views.generic.detail import BaseDetailView
 
 
-from accounts.forms import UploadFileForm
+
 from accounts.models import Files
 
 
