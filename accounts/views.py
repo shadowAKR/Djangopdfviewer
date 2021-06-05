@@ -67,22 +67,12 @@ def upload(request):
     if request.method == 'POST':
         title=request.POST.get('title')
         files=request.FILES['file']
-        s=Files(title=title,pdf=files)
+        s = Files(title=title, pdf=files)
         s.save()
         return redirect('dashboard')
     else:
         return render(request,'upload.html')
 
-    #     form = UploadFileForm(request.POST,request.FILES)
-    #     if form.is_valid():
-    #         form.save()
-    #         return render(request,'dashboard.html')
-    # else:
-    #     form = UploadFileForm()
-    #     context = {
-    #         'form':form,
-    #     }
-    # return render(request, 'upload.html')
 
 
 class DisplayPdfView(BaseDetailView):
