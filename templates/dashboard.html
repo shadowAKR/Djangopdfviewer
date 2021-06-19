@@ -53,16 +53,18 @@
 
                 {% endif %}
             </ul>
+        {% if user.is_authenticated %}
         </div>
         <li class="nav-item">
             <a class="btn btn-warning" text-align="center" href="{% url 'upload' %}">Upload PDF</a>
         </li>
+        {% endif %}
 
 </nav>
 
-
+    {% if user.is_authenticated %}
     <div>
-    {% for i in obj %}
+        {% for i in obj %}
         <div class="shadow card">
         <div class="card-body">
             <h5 class="card-title">{{i.pdf}}</h5>
@@ -71,7 +73,9 @@
         </div>
         {% endfor %}
     </div>
-
+    {% else %}
+        <h3>You must login to view files....</h3>
+    {% endif %}
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
