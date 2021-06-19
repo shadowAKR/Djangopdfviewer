@@ -65,9 +65,8 @@ def logout(request):
 
 def upload(request):
     if request.method == 'POST':
-        title=request.POST.get('title')
         files=request.FILES['file']
-        s = Files(title=title, pdf=files)
+        s = Files(pdf=files)
         s.save()
         return redirect('dashboard')
     else:
