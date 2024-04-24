@@ -77,13 +77,16 @@ WSGI_APPLICATION = 'pdfviewer.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME':'pdfviewer',
-        'USER':'root',
-        'PASSWORD':'',
-        'HOST':'localhost'
-
-    }
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    },
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME':'pdfviewer',
+    #     'USER':'root',
+    #     'PASSWORD':'',
+    #     'HOST':'localhost'
+    # }
 }
 
 
